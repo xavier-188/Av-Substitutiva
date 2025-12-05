@@ -1,0 +1,31 @@
+### RAIZ
+GET http://localhost:5225/
+
+### Listar IMCS
+GET http://localhost:5225/api/imc/listar
+
+###Cadastrar IMC
+
+POST http://localhost:5225/api/imc/cadastrar
+Content-Type: application/json
+
+{
+    "nome" : "Arthur",
+    "altura" : 1.70,
+    "peso" : 120
+
+}
+
+### Buscar por Classificação
+GET http://localhost:5225/api/imc/listar/Obesidade 2
+
+### Alterar Altura e Peso
+
+PUT http://localhost:5225/api/imc/alterar/e6a45614-218b-4f71-be3e-39a4f4fdc134
+Content-Type: application/json
+
+{
+    "nome" : "Felipe",
+    "altura" : 1.90,
+    "peso" : 155
+}
