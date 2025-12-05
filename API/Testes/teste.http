@@ -10,14 +10,14 @@ POST http://localhost:5225/api/imc/cadastrar
 Content-Type: application/json
 
 {
-    "nome" : "Arthur",
-    "altura" : 1.70,
-    "peso" : 120
+    "nome" : "Pedro",
+    "altura" : 1.75,
+    "peso" : 90
 
 }
 
 ### Buscar por Classificação
-GET http://localhost:5225/api/imc/listar/Obesidade 2
+GET http://localhost:5225/api/imc/listar/Normal
 
 ### Alterar Altura e Peso
 

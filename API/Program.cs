@@ -3,6 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>();
 
+builder.Services.AddCors(options =>
+  options.AddPolicy("Acesso Total",
+    configs => configs
+      .AllowAnyOrigin()
+      .AllowAnyHeader()
+      .AllowAnyMethod())
+);
+
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
@@ -80,5 +88,7 @@ app.MapPut("/api/imc/alterar/{id}", ([FromServices] AppDbContext ctx, [FromRoute
     ctx.SaveChanges();
     return Results.Ok("IMC Recalculado!");
 });
+
+app.UseCors("Acesso Total");
 
 app.Run();
